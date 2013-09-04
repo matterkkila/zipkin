@@ -1,0 +1,2 @@
+zipkin-collector-service/dist/zipkin-collector-service/** var/lib/zipkin-collector
+zipkin-cassandra/src/schema/cassandra-schema.txt var/lib/zipkin-collector

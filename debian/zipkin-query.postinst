@@ -1,0 +1,51 @@
+#!/bin/sh
+# postinst script
+
+set -e
+
+# summary of how this script can be called:
+#        * <postinst> `configure' <most-recently-configured-version>
+#        * <old-postinst> `abort-upgrade' <new version>
+#        * <conflictor's-postinst> `abort-remove' `in-favour' <package>
+#          <new-version>
+#        * <postinst> `abort-remove'
+#        * <deconfigured's-postinst> `abort-deconfigure' `in-favour'
+#          <failed-install-package> <version> `removing'
+#          <conflicting-package> <version>
+# for details, see http://www.debian.org/doc/debian-policy/ or
+# the debian-policy package
+
+case "$1" in
+    configure)
+
+        if ! getent group zipkin >/dev/null; then
+            addgroup --system zipkin
+        fi
+
+        if ! getent passwd zipkin-query >/dev/null; then
+            adduser --quiet \
+                --system \
+                --ingroup zipkin \
+                --quiet \
+                --disabled-login \
+                --disabled-password \
+                --home /var/lib/zipkin-query \
+                --no-create-home \
+                -gecos "Zipkin query service" \
+                zipkin-query
+        fi
+        if [ ! -d /var/log/zipkin ]; then
+            mkdir -p /var/log/zipkin
+        fi
+        chown nobody:zipkin /var/log/zipkin
+        chmod 775 /var/log/zipkin
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac

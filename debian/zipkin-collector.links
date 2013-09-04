@@ -1,0 +1,1 @@
+var/lib/zipkin-collector/scripts/init.sh etc/init.d/zipkin-collector

@@ -1,0 +1,25 @@
+Source: zipkin
+Section: unknown
+Priority: extra
+Maintainer: Betable Operations <ops@betable.com>
+Build-Depends: debhelper (>= 8.0.0), sun-java6-jdk | openjdk-6-jdk
+Standards-Version: 3.9.2
+Homepage: http://twitter.github.io/zipkin/
+
+Package: zipkin-collector
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, java6-runtime | java6-runtime-headless
+Description: The zipkin collector service.
+ Zipkin is a distributed tracing system that helps us gather timing data for all the disparate services at Twitter. It manages both the collection and lookup of this data through a Collector and a Query service.
+
+Package: zipkin-query
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, java6-runtime | java6-runtime-headless
+Description: The zipkin query service.
+ Zipkin is a distributed tracing system that helps us gather timing data for all the disparate services at Twitter. It manages both the collection and lookup of this data through a Collector and a Query service.
+
+Package: zipkin-web
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, java6-runtime | java6-runtime-headless
+Description: The zipkin web interface.
+ Zipkin is a distributed tracing system that helps us gather timing data for all the disparate services at Twitter. It manages both the collection and lookup of this data through a Collector and a Query service.

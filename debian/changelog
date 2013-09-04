@@ -1,0 +1,41 @@
+zipkin (1.2.0-factory7) unstable; urgency=low
+
+  * Fix web init script
+
+ -- The Factory Ops <ops@thefactory.com>  Mon, 07 Apr 2014 11:45:00 -0700
+
+zipkin (1.2.0-factory6) unstable; urgency=low
+
+  * Fix web init script
+
+ -- The Factory Ops <ops@thefactory.com>  Mon, 07 Apr 2014 11:19:00 -0700
+
+zipkin (1.2.0-factory5) unstable; urgency=low
+
+  * Fix postinst scripts
+
+ -- The Factory Ops <ops@thefactory.com>  Mon, 07 Apr 2014 09:55:00 -0700
+
+zipkin (1.2.0-factory4) unstable; urgency=low
+
+  * Move log dir creation to postinst
+
+ -- The Factory Ops <ops@thefactory.com>  Fri, 04 Apr 2014 14:18:00 -0700
+
+zipkin (1.2.0-factory3) unstable; urgency=low
+
+  * Added var/log/zipkin to be created on install
+
+ -- The Factory Ops <ops@thefactory.com>  Fri, 04 Apr 2014 13:48:00 -0700
+
+zipkin (1.2.0-factory2) unstable; urgency=low
+
+  * Fix init script for new version of zipkin-web
+
+ -- The Factory Ops <ops@thefactory.com>  Fri, 04 Apr 2014 09:42:00 -0700
+
+zipkin (1.2.0-factory1) unstable; urgency=low
+
+  * Debianize
+
+ -- The Factory Ops <ops@thefactory.com>  Tue, 01 Apr 2014 12:01:00 -0700
